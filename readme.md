@@ -47,7 +47,7 @@ cd app
 python3 app.py
 ```
 
-## Usefull files 
+## Useful files 
 
 - Training and saving the CNN model : https://gist.github.com/imadelh/b337c7b16899831d80d9221a9a60e09f
 - Visualize the inference : https://colab.research.google.com/github/imadelh/ML-web-app/blob/master/Notebooks/emnist_inference_cnn-2.ipynb
