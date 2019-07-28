@@ -1,4 +1,4 @@
-# Train and Deploy Machine Learning Model With Web Interface - PyTorch & Flask
+# Train and Deploy Machine Learning Model With Web Interface - Docker, PyTorch & Flask
 
 ![alt text](https://imadelhanafi.com/data/draft/capture_app_elhanafi.gif)
 
