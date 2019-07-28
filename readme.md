@@ -1,5 +1,8 @@
 # Train and Deploy Machine Learning Model With Web Interface - PyTorch & Flask
 
+![alt text](https://imadelhanafi.com/data/draft/capture_app_elhanafi.gif)
+
+
 Blog post: https://imadelhanafi.com/posts/train_deploy_ml_model/
 
 This repo contains code associated with the above blog post. 
