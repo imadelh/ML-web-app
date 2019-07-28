@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140461850-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-140461850-1');
+  </script>
+  <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v2.3.7/dist/mini-default.min.css">
+  <!--
+  Note: This is a good css too worth looking at in the future : https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-nord.min.css
+  -->
+
+  <link rel="stylesheet"  href="./static/style.css">
+
+  <meta charset="UTF-8">
+  <title>Alphanumeric Recognition -  by Imad </title>
+</head>
+
+<div class="common">
+
+<body>
+
+<header class="sticky row">
+  <div class="col-sm-12 col-md-10 col-md-offset-1">
+  <a href="#" class="logo">αnumeric</a>
+  <a href="./" class="button">App</a>
+  <a href="#" class="button">Blog Post</a>
+  <a href="https://imadelhanafi.com" class="button" target="_blank">About</a>
+  </div>
+</header>
+<div class="row">
+  <div class="col-sm-12 col-md-10 col-md-offset-1">
+    <br/>
+    <h1>Alphanumeric Recognition using PyTorch and Flask <small>deployed on Jetson Nano</small></h1>
+    <p>
+    Draw an alphabet or a digit in the left box.
+    The predicition and it's probability will be shown in the the right box.
+    <p>
+   </br>
+  <div class="boxitem">
+            <canvas id="inputimg" width="196" height="196"></canvas>
+            <button id="clearbtn" class="primary" >Clear</button>
+  </div>
+
+  <div class="boxitem">
+            <div id="predictdigit">0</div>
+            <div id="probStr">Probability: </div>
+  </div>
+  </div>
+</div>
+
+<p>This is a very basic end-to-end Machine Learning application. Hereunder a non-exhaustive list of functionalities that could be added.</p>
+
+<div class="col-sm col-md-8 col-md-offset-2 col-lg-5 col-lg-offset-4 row" style="text-align: center;">
+<div class="card fluid" style=" width: 80%;">
+      <ul style="text-align: left;">
+        <small>Hyperparameter optimization ; Neural network pruning ;</small>
+        <small>Center and crop image ; Show top-n predictions ;</small>
+        <small>Model versionning ; Load balancer in a cluster ;</small>
+        <small>Add correction and submit options - Re-train...</small>
+      </ul>
+</div>
+
+</div>
+
+<div class="container" style="height: 8rem; position: relative;">
+  <span class="toast doc" style="position: absolute;">
+    Made with ♡ during a boring weekend | &copy; 2019 | <a href="https://imadelhanafi"> Imad El Hanafi</a>
+  </span>
+</div>
+
+<!--
+<footer class="row">
+  <div class="col-sm-12 col-md-10 col-md-offset-1">
+    Made with ♡ during a boring weekend | &copy; 2019 | <a href="https://imadelhanafi"> Imad El Hanafi</a>
+  </div>
+</footer>
+</div>
+-->
+
+<script src = "./static/index.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//d3js.org/d3.v5.min.js"></script>
+</body>
