@@ -1,0 +1,8 @@
+# PyTorch and Torchvision installed from source for Jetson-Nano
+# Please uncomment this when working on cloud/PC
+
+# torch==1.0.0
+# torchvision
+flask
+numpy
+Pillow
