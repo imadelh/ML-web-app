@@ -43,7 +43,7 @@ sudo ./mydocker.sh run -i -t --rm -v /home/imad:/home/root/ imadelh/jetson_pytor
 
 ```
 
-and then simply get to the application dir and run it
+and then simply get to the application directory and run it
 
 ```
 cd app
