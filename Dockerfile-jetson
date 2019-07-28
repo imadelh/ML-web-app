@@ -1,0 +1,103 @@
+### version of ubuntu 
+FROM arm64v8/ubuntu
+
+### setup environment variables
+ENV container docker
+ENV NVIDIA_DRIVER_CAPABILITIES ${NVIDIA_DRIVER_CAPABILITIES},display
+
+### set the locale
+ENV LC_ALL=C.UTF-8 \
+    LANG=C.UTF-8 \
+    LANGUAGE=C.UTF-8
+
+### install packages
+RUN apt-get update \
+    && apt-get install -q -y \
+    dirmngr \
+    gnupg2 \
+    lsb-release \
+    && rm -rf /var/lib/apt/lists/*
+
+# setup sources.list
+RUN echo "deb-src http://us.archive.ubuntu.com/ubuntu/ $(lsb_release -cs) main restricted \n\
+deb-src http://us.archive.ubuntu.com/ubuntu/ $(lsb_release -cs)-updates main restricted \n\
+deb-src http://us.archive.ubuntu.com/ubuntu/ $(lsb_release -cs)-backports main restricted universe multiverse \n\
+deb-src http://security.ubuntu.com/ubuntu $(lsb_release -cs)-security main restricted" \
+    > /etc/apt/sources.list.d/official-source-repositories.list
+
+
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive TERM=linux apt-get install --no-install-recommends -q -y \
+    apt-transport-https \
+    apt-utils \
+    bash-completion \
+    build-essential \
+    ca-certificates \
+    clang \
+    clang-format \
+    cmake \
+    cmake-curses-gui \
+    curl \
+    gconf2 \
+    gconf-service \
+    gdb \
+    git-core \
+    git-gui \
+    gvfs-bin \
+    inetutils-ping \
+    llvm \
+    llvm-dev \
+    nano \
+    net-tools \
+    pkg-config \
+    shared-mime-info \
+    software-properties-common \
+    sudo \
+    tzdata \
+    unzip \
+    wget \
+    	python3-dev \
+	python3-numpy \
+	python3-setuptools \
+	python3-pip \
+    && apt-get autoremove -y \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install --upgrade pip==9.0.3 \
+    && pip3 install setuptools
+
+# install packages
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive TERM=linux apt-get install --no-install-recommends -q -y \
+    mesa-utils \
+    && apt-get autoremove -y \
+    && rm -rf /var/lib/apt/lists/*
+
+
+
+### Install ML/dependencies from requirements.txt
+
+
+# Install PyTorch
+RUN echo "downloading PyTorch wheel associated with jetpack" ; \
+wget -v -O torch-1.1.0a0+ed8c462-cp36-cp36m-linux_aarch64.whl -L https://nvidia.box.com/shared/static/y86upxqgjps5nk0x10laoo2svha1juob.whl
+
+RUN pip3 install torch-1.1.0a0+ed8c462-cp36-cp36m-linux_aarch64.whl ;\
+    rm -Rf torch-1.1.0a0+ed8c462-cp36-cp36m-linux_aarch64.whl
+	
+# for web server
+EXPOSE 8888
+
+ENV HOME /home/root
+WORKDIR $HOME
+
+
+# install required libraries
+COPY requirements.txt $HOME
+RUN pip3 install -r requirements.txt
+RUN python3 -m ipykernel install --user
+
+# This is the runtime command for the container
+#CMD jupyter lab --ip 0.0.0.0 --no-browser --allow-root
+
+CMD ["bash"]
