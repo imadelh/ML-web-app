@@ -85,6 +85,13 @@ wget -v -O torch-1.1.0a0+ed8c462-cp36-cp36m-linux_aarch64.whl -L https://nvidia.
 RUN pip3 install torch-1.1.0a0+ed8c462-cp36-cp36m-linux_aarch64.whl ;\
     rm -Rf torch-1.1.0a0+ed8c462-cp36-cp36m-linux_aarch64.whl
 	
+# Install Torchvision
+
+RUN git clone -b v0.3.0 https://github.com/pytorch/vision torchvision ; \
+cd torchvision
+
+RUN python3 setup.py install
+	
 # for web server
 EXPOSE 8888
 
