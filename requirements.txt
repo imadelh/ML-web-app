@@ -1,7 +1,7 @@
 # PyTorch and Torchvision installed from source for Jetson-Nano
 # Please comment torch & torchvision when working on Jetson-Nano
 
-torch==1.0.0
+torch==1.1.0
 torchvision
 flask
 numpy
