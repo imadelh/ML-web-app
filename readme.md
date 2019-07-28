@@ -14,13 +14,13 @@ This repo contains code associated with the above blog post.
 Clone the repo and build the docker image
 
 ```
-docker build -t flaskml .
+sudo docker build -t flaskml .
 ```
 
 Then after that you can run the container while specefying the absolute path to the app 
 
 ```
-docker run -i -t --rm -p 8888:8888 -v **absolute path to app directory**:/app flaskml
+sudo docker run -i -t --rm -p 8888:8888 -v **absolute path to app directory**:/app flaskml
 ```
 
 This will run the application on localhost:8888
