@@ -2,6 +2,9 @@
 
 ![alt text](https://imadelhanafi.com/data/draft/capture_app_elhanafi.gif)
 
+Live access (deployed on GCP): https://ml-app.imadelhanafi.com
+
+---
 
 Blog post: https://imadelhanafi.com/posts/train_deploy_ml_model/
 
