@@ -33,7 +33,7 @@ You can use serveo.net or Ngrok to port the application to the web.
 ## Running on Jetson-Nano 
 
 On Jetson-nano, to avoid long running time to build the image, you can download it from Docker Hub. 
-We will also a costumized Docker command https://gist.github.com/imadelh/cf7b12c9cc81c3cb95ad2c6bc747ccd0 to be able to access the GPU of the device on the container.
+We will also use a costumized Docker command https://gist.github.com/imadelh/cf7b12c9cc81c3cb95ad2c6bc747ccd0 to be able to access the GPU of the device on the container.
 
 ```
 docker pull imadelh/jetson_pytorch_flask:arm_v1
