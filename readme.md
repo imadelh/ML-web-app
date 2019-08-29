@@ -20,6 +20,8 @@ Clone the repo and build the docker image
 sudo docker build -t flaskml .
 ```
 
+NB: if you have MemoryError while installing PyTorch in the container, please consider adding 2G swap to your virtual machine (https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-18-04/)
+
 Then after that you can run the container while specefying the absolute path to the app 
 
 ```
