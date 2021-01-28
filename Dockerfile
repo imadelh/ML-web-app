@@ -8,7 +8,7 @@ RUN pip3 install --upgrade pip==9.0.3 \
     && pip3 install setuptools
 
 # for flask web server
-EXPOSE 8081
+EXPOSE 8888
 
 # set working directory
 ADD . /app
